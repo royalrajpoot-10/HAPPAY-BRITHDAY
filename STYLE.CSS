@@ -1,0 +1,296 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #fce4ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    transition: background-color 0.8s ease;
+}
+
+body.dark-theme {
+    background-color: #1a0926;
+    color: #ffffff;
+}
+
+.top-music-btn {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #ff4081;
+    background: #fff;
+    color: #ff4081;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.screen {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.hidden { display: none !important; }
+
+/* Buttons */
+.primary-btn, .secondary-btn, .control-btn {
+    background: #ff4081;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+    margin: 8px 4px;
+    box-shadow: 0 4px 12px rgba(255, 64, 129, 0.3);
+}
+
+.primary-btn:hover, .control-btn:hover {
+    transform: scale(1.05);
+    background: #e91e63;
+}
+
+/* Name Customizer Input Box */
+.name-input-box {
+    margin: 15px 0;
+    text-align: left;
+}
+
+.name-input-box label {
+    font-size: 0.85rem;
+    color: #666;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.name-input-box input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid #ff80ab;
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/* Card Styling */
+.card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    width: 100%;
+    color: #333;
+}
+
+.card h1 { color: #d81b60; font-size: 1.8rem; margin-bottom: 5px; }
+.sub-msg { color: #777; margin-bottom: 15px; font-size: 0.9rem; }
+
+.inner-box {
+    border: 2px dashed #f8bbd0;
+    padding: 20px;
+    border-radius: 15px;
+    background: #fff5f8;
+}
+
+.inner-box h2 { font-size: 1.3rem; margin-bottom: 10px; color: #ad1457; }
+.inner-box p { font-size: 0.95rem; margin-bottom: 15px; color: #555; }
+
+/* Modal Popup */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+}
+
+.modal-card {
+    background: white;
+    padding: 30px 25px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 320px;
+    width: 85%;
+    color: #333;
+    animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.modal-card .sparkle { font-size: 1.8rem; }
+.modal-card h3 { margin: 15px 0 20px; font-size: 1.2rem; color: #333; }
+
+.dots { display: flex; justify-content: center; gap: 6px; margin-top: 15px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: #ddd; }
+.dot.active { background: #ff4081; width: 16px; border-radius: 10px; }
+
+/* Celebration Room */
+.control-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.control-btn.highlight {
+    background: #ff9800;
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
+}
+
+.decoration-stage {
+    position: relative;
+    width: 100%;
+    min-height: 250px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 20px;
+}
+
+.banner span {
+    background: #ff4081;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+    to { transform: translateY(-8px); }
+}
+
+.cake { font-size: 80px; margin-top: 20px; animation: popIn 0.5s ease; }
+
+.balloon-container {
+    position: fixed;
+    bottom: -100px;
+    left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.balloon {
+    position: absolute;
+    width: 40px; height: 50px;
+    border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+    animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+    to { transform: translateY(-110vh); }
+}
+
+/* Screen 3: Message Letter */
+.letter-wrapper {
+    background: white;
+    width: 100%;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    color: #333;
+    position: relative;
+}
+
+.letter-header { font-weight: bold; font-size: 1.1rem; color: #ad1457; margin-bottom: 15px; }
+
+.curtain-container {
+    position: relative;
+    min-height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #eee;
+}
+
+.curtain-doors {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: #c2185b;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.8s ease;
+}
+
+.curtain-doors.open {
+    transform: translateY(-100%);
+}
+
+.open-btn {
+    background: #ffe0b2;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #e65100;
+    cursor: pointer;
+}
+
+.letter-content {
+    padding: 20px;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.message-text {
+    margin: 12px 0;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.letter-content h3 { color: #d81b60; margin-bottom: 10px; }
+.signature { margin-top: 15px; font-weight: bold; color: #666; }
+
+/* Screen 4: Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.footer-msg { font-size: 0.9rem; color: #ad1457; margin-top: 15px; font-weight: 600; }
+.back-btn { align-self: flex-start; margin-bottom: 10px; background: none; border: none; font-size: 1rem; color: #ff4081; cursor: pointer; }

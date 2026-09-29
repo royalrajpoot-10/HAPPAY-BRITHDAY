@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday 🎉</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-theme">
+
+    <audio id="bgMusic" loop>
+        <source src="Happy Birthday 5.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="musicToggleBtn" class="top-music-btn">🎵 Play Music</button>
+
+    <!-- STEP 1: WELCOME SCREEN -->
+    <div id="screen1" class="screen active">
+        <div class="card main-card">
+            <h1>Happy Birthday <span class="guest-name">MOEEZ</span> 🎂</h1>
+            <p class="sub-msg">A special surprise for a special person ❤️</p>
+
+            <div class="inner-box">
+                <h2>✨ It's Your Birthday! ✨</h2>
+                <p>♥️ Ready for your surprise! ♥️<br><small>Something wonderful is waiting for you</small></p>
+                <button id="startBtn" class="primary-btn">🎉 Let's Celebrate</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- POPUP MODALS -->
+    <div id="modalOverlay" class="modal-overlay hidden">
+        <div class="modal-card">
+            <span class="sparkle">✨</span>
+            <h3 id="modalTitle">It's Your Special Day! 🎉</h3>
+            <div class="modal-actions" id="modalActions">
+                <button id="modalNextBtn" class="primary-btn">Next</button>
+            </div>
+            <div class="dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- STEP 2: CELEBRATION ROOM -->
+    <div id="screen2" class="screen hidden">
+        <div class="celebration-container">
+            <h2>Let's Celebrate! 🎉</h2>
+            <p class="hint">Click the buttons below to decorate the room</p>
+
+            <div class="control-buttons">
+                <button id="btnLights" class="control-btn">Turn on the Lights</button>
+                <button id="btnMusic" class="control-btn">Play Music</button>
+                <button id="btnDecorate" class="control-btn">Decorate</button>
+                <button id="btnBalloons" class="control-btn">Fly the Balloons</button>
+                
+                <button id="btnMessage" class="control-btn highlight hidden">💌 O Yes! I Have a Special Message for You</button>
+            </div>
+
+            <div class="decoration-stage">
+                <div id="buntingBanner" class="banner hidden">
+                    <span>H</span><span>A</span><span>P</span><span>P</span><span>Y</span>
+                    <span>B</span><span>I</span><span>R</span><span>T</span><span>H</span><span>D</span><span>A</span><span>Y</span>
+                </div>
+
+                <div id="cakeElement" class="cake hidden">🎂</div>
+                <div id="balloonContainer" class="balloon-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- STEP 3: ENVELOPE / CURTAIN MESSAGE -->
+    <div id="screen3" class="screen hidden">
+        <button id="backToRoomBtn" class="back-btn">← Back</button>
+
+        <div class="letter-wrapper">
+            <div class="letter-header">🌸 A Message From My Heart 🌸</div>
+            
+            <div class="curtain-container" id="curtainContainer">
+                <div class="curtain-doors" id="curtainDoors">
+                    <button id="openLetterBtn" class="open-btn">Click to Open 💌</button>
+                </div>
+
+                <div class="letter-content" id="letterContent">
+                    <h3>Dear <span class="guest-name">MOEEZ</span>,</h3>
+
+                    <div id="messageBody" class="message-text"></div>
+
+                    <p class="signature">— With Warmest Wishes ❤️</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
