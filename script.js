@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 1️⃣ CHANGE NAME HERE (Direct JS Code)
     // ==========================================
     // 👉 Jab bhi naam change karna ho, bas is line me naam badal dein:
-    const GUEST_NAME = "Abeeha "; 
+    const GUEST_NAME = "Hina "; 
 
     // Auto-update all elements on the page
     document.querySelectorAll('.guest-name').forEach(el => {
